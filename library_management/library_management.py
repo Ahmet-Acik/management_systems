@@ -5,6 +5,107 @@ class LibraryManagement:
     Library Management System
 
     This module uses lists, sets, tuples, and dictionaries to manage library data. It includes comprehensive business logic and demonstrates the use of common methods for each data structure.
+
+    Data Structures:
+
+    1. Lists: To store collections of books, members, and loans.
+    2. Tuples: To store immutable book and member details.
+    3. Sets: To manage unique genres and authors.
+    4. Dictionaries: To map book IDs and member IDs to their details and manage loan records.
+
+    List of books with details (Book ID, Title, Author, Genre, Availability):
+    books = [
+        (1, "1984", "George Orwell", "Dystopian", True),
+        (2, "To Kill a Mockingbird", "Harper Lee", "Fiction", True),
+        (3, "The Great Gatsby", "F. Scott Fitzgerald", "Classic", False),
+        (4, "Moby Dick", "Herman Melville", "Adventure", True),
+        (5, "War and Peace", "Leo Tolstoy", "Historical", False)
+    ]
+
+    List of members with details (Member ID, Name, Age, Membership Type):
+    members = [
+        (101, "Alice", 30, "Premium"),
+        (102, "Bob", 25, "Standard"),
+        (103, "Charlie", 28, "Premium"),
+        (104, "Diana", 35, "Standard"),
+        (105, "Eve", 40, "Premium")
+    ]
+
+    List of loans (Loan ID, Book ID, Member ID, Loan Date, Return Date):
+    loans = [
+        (1001, 1, 101, "2023-01-01", "2023-01-15"),
+        (1002, 3, 102, "2023-01-10", None),
+        (1003, 5, 103, "2023-01-12", None)
+    ]
+
+    Set of unique genres:
+    genres = set()
+
+    Adding genres from books:
+    for book in books:
+        genres.add(book[3])
+
+    Set of unique authors:
+    authors = set()
+
+    Adding authors from books:
+    for book in books:
+        authors.add(book[2])
+
+    Dictionary to map book IDs to their details:
+    book_catalog = {book[0]: book for book in books}
+
+    Dictionary to map member IDs to their details:
+    member_catalog = {member[0]: member for member in members}
+
+    Dictionary to manage loan records:
+    loan_records = {loan[0]: loan for loan in loans}
+
+    Functions:
+
+    List-Related Methods:
+    1. find_book_index(book_id): Finds the index of a book in the list.
+    2. find_member_index(member_id): Finds the index of a member in the list.
+    3. sort_books_by_title(): Sorts books by title.
+    4. sort_members_by_age(): Sorts members by age.
+    5. reverse_loans(): Reverses the list of loans.
+    6. append_loan(loan): Appends a new loan to the list.
+    7. remove_loan(loan_id): Removes a loan from the list.
+
+    Tuple-Related Methods:
+    1. find_max_min_age_members(): Finds the maximum and minimum age of members.
+    2. count_genre_occurrences(genre): Counts the occurrences of a specific genre.
+
+    Set-Related Methods:
+    1. add_genre(genre): Adds a new genre.
+    2. remove_genre(genre): Removes a genre.
+    3. list_all_genres(): Lists all genres.
+    4. add_author(author): Adds a new author.
+    5. remove_author(author): Removes an author.
+    6. list_all_authors(): Lists all authors.
+    7. find_common_genres(other_genres): Finds common genres between two sets.
+    8. find_unique_genres(): Finds unique genres in the library.
+    9. clear_genres(): Clears all genres.
+
+    Dictionary-Related Methods:
+    1. add_book(book_id, title, author, genre, availability): Adds a new book to the library.
+    2. remove_book(book_id): Removes a book from the library.
+    3. get_book_details(book_id): Gets book details.
+    4. list_books_by_genre(genre): Lists all books by genre.
+    5. count_books_by_genre(genre): Counts books by genre.
+    6. add_member(member_id, name, age, membership_type): Adds a new member to the library.
+    7. remove_member(member_id): Removes a member from the library.
+    8. get_member_details(member_id): Gets member details.
+    9. list_members_by_membership_type(membership_type): Lists all members by membership type.
+    10. count_members_by_membership_type(membership_type): Counts members by membership type.
+    11. update_book_details(book_id, new_details): Updates book details.
+    12. update_member_details(member_id, new_details): Updates member details.
+    13. merge_book_catalogs(other_catalog): Merges two book catalogs.
+    14. merge_member_catalogs(other_catalog): Merges two member catalogs.
+    15. get_all_book_ids(): Gets all book IDs.
+    16. get_all_member_ids(): Gets all member IDs.
+    17. clear_book_catalog(): Clears the book catalog.
+    18. clear_member_catalog(): Clears the member catalog.
     """
 
     def __init__(self):
